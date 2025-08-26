@@ -1,9 +1,12 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
+import dbConnect from './config/db.js';
 
 dotenv.config();
 const app = express();
+
+dbConnect();
 
 app.use(cors({
   origin: process.env.CLIENT_URL || "http://localhost:5173",
